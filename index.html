@@ -192,21 +192,65 @@
   .assistant-fab:hover{transform:scale(1.08)}
   .assistant-fab::after{content:"";position:absolute;top:6px;right:6px;width:13px;height:13px;background:#34F5A0;border:2px solid #fff;border-radius:50%}
 
-  @media(max-width:900px){
-    .hero-grid,.foot-grid{grid-template-columns:1fr}
-    .services,.reviews{grid-template-columns:repeat(2,1fr)}
-    .why-grid{grid-template-columns:repeat(2,1fr)}
-    .navlinks{display:none}
-    .menu-toggle{display:block}
-    .hero-card{order:-1}
-    .scene{transform:none}
-  }
-  @media(max-width:560px){
-    .services,.reviews,.why-grid{grid-template-columns:1fr}
-    .foot-grid{grid-template-columns:1fr 1fr}
-  }
-.svccta{margin-top:.9rem;color:var(--blue);font-weight:800;font-family:var(--display);font-size:.82rem;text-transform:uppercase;display:inline-flex;gap:.4rem;position:relative}
-.mapwrap{border-radius:18px;overflow:hidden;border:1.5px solid var(--mist);margin-top:1.5rem;background:var(--mist)}.mapwrap iframe{width:100%;height:380px;border:0;display:block}.map-placeholder{padding:3rem 2rem;text-align:center;color:#566186;font-size:.95rem}</style>
+  
+@media(max-width:900px){
+  .navlinks{display:none}
+  .menu-toggle{display:block}
+  .hero-grid,.foot-grid{grid-template-columns:1fr}
+  .services,.reviews{grid-template-columns:repeat(2,1fr)}
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .cardgrid{grid-template-columns:repeat(2,1fr)}
+  .hero-card{order:-1}
+  .scene{transform:none}
+}
+@media(max-width:640px){
+  .topbar{font-size:.72rem}
+  .topbar .wrap{padding:.5rem 1rem;gap:.3rem;justify-content:center;text-align:center}
+  nav{padding:.7rem 1rem;gap:.5rem}
+  .logo{font-size:1.02rem;gap:.5rem}
+  .logo .mark{width:38px;height:38px;border-radius:10px}
+  .logo small{font-size:.5rem;letter-spacing:.16em}
+  .callbtn{padding:.6rem .9rem;font-size:.82rem;gap:.35rem}
+  .menu-toggle{order:3}
+  .hero{padding:3rem 1.2rem 4rem}
+  h1{font-size:2.4rem!important;line-height:1!important}
+  .pagehero{padding:2.6rem 1.2rem 3rem}
+  .pagehero h1{font-size:2rem}
+  .hero p.lead,.pagehero p{font-size:1rem}
+  .trust-row{gap:1.3rem;margin-top:1.8rem}
+  .trust-row b{font-size:1.5rem}
+  section.block{padding:3.2rem 1.2rem}
+  h2{font-size:1.7rem}
+  .services,.reviews,.why-grid,.cardgrid{grid-template-columns:1fr}
+  .why{padding:2.6rem 1.3rem}
+  .ctaband{padding:3rem 1.3rem}
+  .btn-primary,.btn-white,.hero-cta .btn-ghost{width:100%;justify-content:center}
+  .hero-cta{flex-direction:column;align-items:stretch}
+  .float-card{font-size:.78rem;padding:.6rem .8rem}
+  .fc1{left:6px;bottom:-14px}
+  .fc2{right:6px;top:-12px}
+  .foot-grid{grid-template-columns:1fr 1fr;gap:1.6rem}
+  .assistant-bubble{max-width:200px;font-size:.84rem}
+  .assistant-fab{width:54px;height:54px}
+  .breadcrumb{padding:1rem 1.2rem .2rem;font-size:.78rem}
+  .mapwrap iframe,.mapwrap .map-placeholder{height:auto}
+}
+@media(max-width:380px){
+  .navlinks{display:none}
+  h1{font-size:2rem!important}
+  .logo small{display:none}
+  .topbar span:first-child{display:none}
+}
+
+
+@media(max-width:900px){
+  .navlinks{position:absolute;top:100%;left:0;right:0;background:rgba(11,16,32,.98);backdrop-filter:blur(16px);flex-direction:column;gap:0;padding:.5rem 0;border-bottom:1px solid var(--line);box-shadow:0 20px 40px -16px rgba(0,0,0,.6)}
+  .navlinks.open{display:flex!important}
+  .navlinks a{padding:.95rem 1.5rem;width:100%;font-size:1rem}
+  .navlinks a::after{display:none}
+  .navlinks a:active{background:rgba(255,255,255,.06)}
+}
+</style>
 </head>
 <body>
 
@@ -219,7 +263,7 @@
   <a href="#" class="logo"><span class="mark"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a5 5 0 0 0-6.5 6.5l-5.3 5.3a1.5 1.5 0 0 0 2.1 2.1l5.3-5.3a5 5 0 0 0 6.5-6.5l-2.6 2.6-2.1-.4-.4-2.1 2.6-2.6z" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>All Care Plumbing<small>Services, LLC · Oklahoma</small></span></a>
   <div class="navlinks"><a href="#services">Services</a><a href="#why">Why Us</a><a href="#areas">Areas</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a></div>
   <a href="tel:+14054356704" class="callbtn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Call Now</a>
-  <button class="menu-toggle" onclick="document.querySelector('.navlinks').style.display='flex';this.style.display='none'"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
+  <button class="menu-toggle" onclick="document.querySelector('.navlinks').classList.toggle('open')"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></button>
 </nav></header>
 
 <section class="hero">
